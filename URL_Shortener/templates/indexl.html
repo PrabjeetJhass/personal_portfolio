@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'URL_Shortener/style.css' %}">
+    <title>Shorten URL</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <div class="min-h-screen">
+        <header class="flex items-center justify-between p-2">
+            <div class="logo">
+                <h1 class="logo-text select-none text-2xl text-blue-800">Shorten URL</h1>
+            </div>
+            <div class="account aspect-square w-12 overflow-hidden rounded-full">
+                <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                    alt="Avatar" />
+            </div>
+        </header>
+        <section class="mt-4">
+            <h1 class="text-center font-sans text-2xl font-bold text-blue-800 sm:text-3xl">Shorten your loooooong links
+                :)</h1>
+            <p class="m-4 text-center sm:text-lg">Shorten URL is an efficient and easy-to-use URL shortening tool that
+                streamlines your link sharing experience.</p>
+        </section>
+        <section class="create-short-link my-4">
+            <div
+                class="shorten-url-form m-2 flex items-center justify-center gap-2 rounded-lg bg-white p-2 shadow-md sm:mx-auto sm:max-w-lg">
+                <div class="flex w-full items-center">
+                    <div class="fa-solid fa-link"></div>
+                    <input type="url"
+                        class="w-full border-b-2 border-transparent bg-transparent p-2 focus:border-blue-800 focus:outline-none"
+                        placeholder="Link to shorten" name="input-bar" id="input-bar" />
+                </div>
+                <button id="submit-btn" class="btn-primary"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+        <hr />
+        <section class="history">
+
+        </section>
+        <footer class="fixed bottom-0 w-full bg-blue-900 p-4 text-white">
+            <p class="text-center">&copy; Copyright Prabjeet Singh 2023. All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+    const submit_btn = document.querySelector('#submit-btn')
+    const input_bar = document.querySelector('input#input-bar')
+
+    submit_btn.addEventListener('click', () => {
+        $.ajax({
+            url: 'shortenUrl/',
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify({ 'longUrl': input_bar.value, }),
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": getCookie("csrftoken"),  // don't forget to include the 'getCookie' function
+            },
+            success: (response) => {
+                console.log(response);
+                if (response['type'] == 'success') {
+                    console.log('The shortenedURL is ' + response['ShortUrl'])
+                } else if (response['type'] == 'error') {
+                    console.log(response['message'])
+                    alert('Please Enter a valid URL!')
+                }
+            },
+            error: (error) => {
+                console.log(error);
+                alert('Oops! Something went wrong. Please try again or try later.')
+            }
+        });
+    })
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            const cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + "=")) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+</html>

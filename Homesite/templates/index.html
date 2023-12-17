@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Homepage/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Prabjeet Singh - Portfolio</title>
+</head>
+
+<body>
+    <div class="notification fixed z-[80] hidden w-full top-0 bg-green-300 border-l-[5px] border-green-500">
+        <h1 class="font-bold text-lg">Hello Dear!</h1>
+        <button class="font-bold text-2xl">&times;</button>
+    </div>
+    <header class="fixed left-0 top-0 z-10 flex w-full items-center justify-between bg-white p-3">
+        <div class="logo">
+            <h1 class="logo-text text-xl">Prabjeet Singh</h1>
+        </div>
+        <div class="hamburger fa-solid fa-bars fa-lg"></div>
+        <nav class="absolute -right-full top-0 h-full w-10/12 bg-blue-100 p-3">
+            <ul class="navlinks">
+                <li class="navlink"><a href="#about-section">About</a></li>
+                <li class="navlink"><a href="#qualifications-section">Qualifications</a></li>
+                <li class="navlink"><a href="#skills-section">Skills</a></li>
+                <li class="navlink"><a href="#projects-section">Projects</a></li>
+                <li class="navlink"><a href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div
+            class="mx-auto flex min-h-screen w-max flex-col items-center justify-center gap-4 py-4 xd:w-full xd:flex-row xd:justify-around xd:gap-0 lg:max-w-2xl xl:max-w-4xl">
+            <div class="aspect-square w-64 overflow-hidden rounded-full sm:w-72 xd:w-64 lg:w-72 xl:w-[22rem]">
+                <img src="https://ntvb.tmsimg.com/assets/assets/1127949_v9_ba.jpg" class="profile-picture"
+                    alt="Prabjeet Singh Profile Picture" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="my-3 flex flex-col items-center gap-2">
+                    <p class="intro-greeting font-semibold sm:text-lg xl:text-xl">Hello, I'm</p>
+                    <h1
+                        class="intro-name text-4xl font-bold sm:text-[2.75rem] xd:text-4xl lg:text-[2.75rem] xl:text-[3.5rem]">
+                        Prabjeet Singh</h1>
+                    <h3 class="intro-profession text-xl font-semibold sm:text-2xl xd:text-xl lg:text-2xl xl:text-3xl">A
+                        Full Stack Web Developer</h3>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button class="btn-primary">Contact</button>
+                    <button class="btn-secondary">See Resume</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section">
+        <h1 class="section-title">About</h1>
+        <div class="mx-auto flex flex-col gap-4 sm:w-80 md:w-full md:flex-row xd:justify-around lg:max-w-3xl">
+            <div class="section-container">
+                <div class="fa-solid fa-award fa-2xl pb-2 pt-4"></div>
+                <h3 class="section-container-title">Experience</h3>
+                <div>
+                    <ul>
+                        <li>• 1+ years of experience as a full stack developer</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="fa-solid fa-medal fa-2xl pb-2 pt-4"></div>
+                <h3 class="section-container-title">Qualifications</h3>
+                <div>
+                    <ul>
+                        <li>• High School - 2019</li>
+                        <li>• Senior Secondary School - 2021</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="my-8">
+            <p class="mx-auto max-w-3xl text-justify text-sm xd:text-base">"Fueled by a passion for problem-solving, I
+                found my calling in programming—an art that enables me to untangle complexities methodically. I'm drawn
+                to web development for its rapid translation of ideas into tangible apps and websites. While I possess a
+                knack for quick learning, my meticulous approach ensures a thorough understanding before implementation,
+                ensuring quality in every project."</p>
+        </div>
+    </section>
+    <section class="skills-section">
+        <h1 class="section-title">Skills</h1>
+        <div class="mx-auto flex flex-col gap-4 sm:w-80 md:w-full md:flex-row xd:justify-around lg:max-w-3xl">
+            <div class="section-container">
+                <h3 class="section-container-title">Frontend Development</h3>
+                <ul class="w-full">
+                    <li>
+                        <article>
+                            <h4>HTML</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[95%]"></div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>CSS</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[90%]"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <h4>JavaScript</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[70%]"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <h4>TailwindCSS</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[80%]"></div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div class="section-container">
+                <h3 class="section-container-title">Backend Development</h3>
+                <ul class="w-full">
+                    <li>
+                        <article>
+                            <h4>Python</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[60%]"></div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Django</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[60%]"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <h4>Flask</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[60%]"></div>
+                            </div>
+                        </article>
+                        <article>
+                            <h4>SQLite3</h4>
+                            <div class="slider-background">
+                                <div class="slider-value h-full w-[80%]"></div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section">
+        <h1 class="section-title">Projects</h1>
+        <div class="flex gap-4 overflow-x-scroll">
+            <div class="rounded-xl border border-black p-3">
+                <div class="overflow-hidden rounded-md">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4968d0184035159.654a7c339ee23.png"
+                        alt="To Do App Image" />
+                </div>
+                <h3 class="m-3 text-center">To Do List App</h3>
+                <p>A Small and interactive web app to quickly build your to-do list.</p>
+                <div class="my-4 flex justify-center gap-4">
+                    <button class="btn-primary">Github</button>
+                    <button class="btn-secondary">View Demo</button>
+                </div>
+            </div>
+            <div class="rounded-xl border border-black p-3">
+                <div class="overflow-hidden rounded-md">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4968d0184035159.654a7c339ee23.png"
+                        alt="To Do App Image" />
+                </div>
+                <h3 class="m-3 text-center">To Do List App</h3>
+                <p>A Small and interactive web app to quickly build your to-do list.</p>
+                <div class="my-4 flex justify-center gap-4">
+                    <button class="btn-primary">Github</button>
+                    <button class="btn-secondary">View Demo</button>
+                </div>
+            </div>
+            <div class="rounded-xl border border-black p-3">
+                <div class="overflow-hidden rounded-md">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4968d0184035159.654a7c339ee23.png"
+                        alt="To Do App Image" />
+                </div>
+                <h3 class="m-3 text-center">To Do List App</h3>
+                <p>A Small and interactive web app to quickly build your to-do list.</p>
+                <div class="my-4 flex justify-center gap-4">
+                    <button class="btn-primary">Github</button>
+                    <button class="btn-secondary">View Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <h1 class="section-title">Contact</h1>
+        <div
+            class="mx-auto flex w-max max-w-xl flex-col gap-2 rounded-lg border border-black p-4 px-8 md:text-lg sd:w-full sd:flex-row sd:justify-between sd:px-4">
+            <div class="flex items-center gap-2 hover:text-blue-800">
+                <i class="fa-solid fa-envelope fa-lg"></i>
+                <p>prabjeet.jhass@gmail.com</p>
+            </div>
+            <div class="flex items-center gap-2 hover:text-blue-800">
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+                <p>Prabjeet_Singh</p>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-8 bg-black p-4">
+        <p class="text-center text-white">Copyright &copy Prabjeet Singh 2023. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+<script>
+    const socket = new WebSocket('ws://devprabjeetsingh.com/ws/notify/')
+    const notification = document.querySelector('div.notification')
+
+    socket.onmessage = (event) => {
+        notification.classList.toggle('hidden')
+    }
+
+</script>
+
+</html>
